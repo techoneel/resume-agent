@@ -1,9 +1,14 @@
-// require('dotenv').config();
+require('dotenv').config();
 const fs = require('fs');
 const { OpenAI } = require('openai');
 
-// const openaiAPIkey = process.env.OPENAI_API_KEY;
-const openai = new OpenAI({ apiKey: "<YOUR OPEN AI API KEY>" });
+const openaiAPIkey = process.env.OPENAI_API_KEY;
+if (!openaiAPIkey) {
+  console.error('OPENAI_API_KEY is missing from environment variables.');
+  process.exit(1);
+}
+
+const openai = new OpenAI({ apiKey: openaiAPIkey });
 
 async function run() {
   const bio = fs.readFileSync('./inputs/bio.txt', 'utf-8');
