@@ -73,9 +73,11 @@ resume-agent/
 ├── index.js              # Main logic
 ├── test_env.js           # .env debug
 ├── test.js               # OpenAI API test
-├── bio.txt               # Input bio
-├── job.txt               # Input job description
-├── modified_bio.txt      # Output result
+├── inputs
+   ├──bio.txt             # Input bio
+   ├── job.txt            # Input job description
+├── output
+   ├──modified_bio.txt    # Output result
 ├── .env                  # Your OpenAI API key
 ├── package.json
 └── README.md
